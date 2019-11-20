@@ -1,0 +1,73 @@
+/* Generales y para celular */
+*
+{
+    margin: 0;
+    padding: 0;
+    transition: 1s;
+}
+
+body
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100vh; /* toma el alto completo de la visual del dispositivo (pueden usarse valores mayores a 100) */
+}
+
+section
+{
+    height: 100vh;
+    background-color: red;
+    border-radius: 7%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+h2
+{
+    color: white;
+    font-size: 20vh;
+}
+
+
+/* Para tablets */
+
+@media screen and (min-width:420px) /* cuando la pantalla mide menos de 420px */
+{
+    body
+    {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    }
+
+    section
+    {
+        grid-column:span 2;
+        grid-column-start: 2; 
+        grid-column-end: 4;
+        background-color: blue;
+    }
+    
+    h2
+    {
+        font-size: 10vh;
+    }
+}
+
+
+/* Para PC */
+
+@media screen and (min-width:800px)
+{
+    body
+    {
+        grid-template-columns: repeat(8,1fr);
+    }
+
+    section
+    {
+        grid-column-end: 5;
+        background-color: green;
+        height: 70vh;
+    }
+}

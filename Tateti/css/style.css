@@ -1,0 +1,268 @@
+@font-face
+{
+    font-family:"crayon";
+    src: url('../font/crayon3.ttf');
+}
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    /*transition: 1s;*/
+}
+
+body
+{
+    background-color: rgba(74, 185, 185, 1); /* rgba utiliza canal alfa para manejar transparencias */
+    display: grid;
+    grid-template-rows: 95px 1fr;
+    height: 100vh;
+    background-image: url('../img/fondoCuaderno.png');
+    background-repeat: repeat;
+}
+
+footer
+{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+div
+{
+    /*background-color: rgba(0, 0, 0, 0.2);*/
+    border-radius: 15px;
+    align-items: center;
+}
+
+div:hover
+{
+    /*background-color: rgba(0, 0, 0, 0.4);*/
+}
+
+header
+{
+    background-color: rgba(255, 255, 255, 0.2);
+    display: grid;
+    grid-template-columns: 50px 1fr 50px 1fr;
+    align-items: center;
+    justify-items: start;
+    border-radius: 15px;
+    margin: 15px 32px 0 32px;
+}
+
+section
+{
+    width: 310px;
+    height: 310px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 0px;
+    margin: auto;
+    
+    /* transform: translateY(50%); no aplicable a mobile */
+}
+
+
+
+section#tablero
+{
+    background-image: url('../img/fondo.png');
+    background-color: transparent;
+}
+
+h2
+{
+    font-family: 'crayon';
+    font-size: 85px;
+    text-align: center;
+    margin: 0;
+}
+
+h1
+{
+    font-family: Arial;
+    font-size: 45px;
+    
+}
+
+.X
+{
+    transition: 0.3s;
+    color: red;
+    
+}
+
+.O
+{
+    transition: 0.3s;
+    color: blue;
+}
+
+.modal
+{
+    transition: 1s;
+    display: grid;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: hidden; /* para desplazar los elementos de la pantalla */
+}
+
+.modalOff
+{
+    width: 0;
+}
+
+
+
+.modal > section /* secciones dentro de algo que tenga clase modal */
+{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    height: 400px;
+}
+
+.modal > section > h3,.modal > section > h4 /* h3 dentro de secciones que están dentro de algo que tenga clase MODAL */
+{
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.modal > section > h4
+{
+    font-size: 30px;
+}
+
+.modal > section > button#botonInicio
+{
+    border-radius: 15px;
+    font-size: 50px;
+    background-color: seagreen;
+    border: 0;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 1);
+    margin: 10px;
+}
+
+.modal > section > button:hover#botonInicio
+{
+    transition: 1s;
+    box-shadow: 0 0 25px 0 rgb(0, 190, 16);
+    margin: 0;
+    margin: 10px;
+}
+
+.botonReinicio
+{
+    position: absolute;
+    display: grid;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: coral;
+    border: 0;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 1);
+    margin: 20px;
+    
+}
+
+.botonReinicio:hover
+{
+    transition: 1s;
+    box-shadow: 0 0 25px 0 rgb(236, 76, 2);
+    margin: 20px;
+}
+
+.botonReinicioOff
+{
+    transition: 1s;
+    display: none;
+}
+
+.ganado
+{
+    transition: 1s;
+    /*background-color: rgba(17, 0, 255, 0.417);*/
+    color:green ;
+   
+    
+}
+
+div#ganador
+{
+    margin: 15px;
+    margin-top: 0;
+    height: 60px;
+    
+}
+
+.ganador
+{
+    transition: 1s;
+    /*width: 100vw;*/
+    margin: 15px;
+    margin-top: 0;
+    height: 60px;
+    text-align: center;
+    align-items: center;
+    color:green;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 45px;
+    
+    
+}
+
+.ganadorOff
+{
+    width: 0;
+}
+
+.imgHide
+{
+    transition: 1s;
+    width: 0;
+    height: 0;
+}
+
+.imgShow
+{
+    transition: 1s;
+    width: 48px;
+    height: 48px;
+}
+
+.btnContinuar
+{
+    display: grid;
+    border-radius: 15px;
+    font-size: 25px;
+    background-color: rgb(46, 79, 139);
+    border: 0;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 1);
+    margin: 10px;
+}
+
+.btnContinuarOff
+{
+    display: none;
+}
+
+.modalGanador
+{
+    transition: 1s;
+    display: grid;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: hidden; /* para desplazar los elementos de la pantalla */
+}
+
+.modalGanadorOff
+{
+    width: 0;
+}

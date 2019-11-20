@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Tatetí</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    
+  </head>
+  <header>
+    <img id="jugadaX" class="imgHide" src="img/dedo.png" alt="" width="48" height="48">
+    <h1 id="puntosX" class="X">X: -</h1>
+    <img id="jugadaO" class="imgHide" src="img/dedo.png" alt="" width="48" height="48">
+    <h1 id="puntosO" class="O">O: -</h1>
+  </header>
+  <body>
+    <article id="inicio" class="modal">
+      <section>
+        <h3>Ta-Te-Ti</h3>
+        <h4>2 Jugadores</h4>
+        <button id="botonReinicio" class="botonReinicioOff" onclick="reiniciarPartida()" >Reiniciar</button>
+        <button id="botonInicio" class="inicio" onclick="iniciarPartida(true)">Empezar</button>
+      </section>
+    </article>
+    <article id="campeon" class="modalGanadorOff">
+      <img class="modalGanadorOff" id="imagenCopa" src="img/copaO.png" alt="">
+    </article>
+    <section id="tablero"> 
+     <!-- se generan las casillas en tiempo de ejecución: función dibujarTablero()-->
+    </section>
+    <script src="js/script.js"></script>
+  </body>
+  <footer>
+    <div id="ganador" class="ganadorOff"></div>
+    <button id="botonContinuar" class="btnContinuarOff" onclick="Continuar()" >Continuar</button>
+  </footer>
+</html>

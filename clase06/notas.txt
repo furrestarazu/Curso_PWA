@@ -1,0 +1,10 @@
+PASOS PARA EL TATETI
+
+
+El área mínima es de 350px
+Los márgenes deberían ser de 16 a 20 px
+
+las áreas activas son de 100px con un espacio de 5px de separación entre ellos
+
+Ver dónde meter el menú
+
