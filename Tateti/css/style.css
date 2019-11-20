@@ -35,10 +35,7 @@ div
     align-items: center;
 }
 
-div:hover
-{
-    /*background-color: rgba(0, 0, 0, 0.4);*/
-}
+
 
 header
 {
@@ -255,6 +252,8 @@ div#ganador
 {
     transition: 1s;
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -265,4 +264,31 @@ div#ganador
 .modalGanadorOff
 {
     width: 0;
+}
+
+
+.botonReinicioPartida
+{
+    position: absolute;
+    display: grid;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: coral;
+    border: 0;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 1);
+    margin: 20px;
+    
+}
+
+.botonReinicioPartida:hover
+{
+    transition: 1s;
+    box-shadow: 0 0 25px 0 rgb(236, 76, 2);
+    margin: 20px;
+}
+
+.botonReinicioPartidaOff
+{
+    transition: 1s;
+    display: none;
 }

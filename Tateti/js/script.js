@@ -90,7 +90,7 @@ function escribirCasilla(id)
             document.getElementById("jugadaO").className = "imgHide";
             incrementarPuntaje(turno);
 
-            if(puntosX<1 && puntosO<1)
+            if(puntosX<5 && puntosO<5)
             {
                 document.getElementById("botonInicio").setAttribute('onclick',"iniciarPartida(false)");
                 document.getElementById("botonInicio").innerText = "REVANCHA!";
@@ -110,6 +110,7 @@ function escribirCasilla(id)
                 }
                 document.getElementById("campeon").className="modalGanador";
                 document.getElementById("imagenCopa").className="modalGanador";
+                document.getElementById("botonReinicioPartida").className="botonReinicioPartida"
 
                 puntosX=0;
                 puntosO=0;
