@@ -1,8 +1,12 @@
-
+const dir = "sounds/"
 var turno = 'X';
 var puntosX = 0;
 var puntosO = 0;
 var cantidadJugadas = 0;
+var sndX = new Audio("sounds/cruz.mp3");
+var sndO = new Audio("sounds/circulo.mp3");
+var sndPartida = new Audio("sounds/aplauso.mp3");
+var sndCapeon = new Audio("sounds/campeon.mp3");
 
 //document.getElementById("botonInicio").disabled = true;
 
@@ -30,6 +34,7 @@ function mostrarInicio(mostrar)
         document.getElementById("inicio").className = "modal modalOff";
         document.getElementById("puntosX").innerHTML = "X: " + puntosX;
         document.getElementById("puntosO").innerHTML = "O: " + puntosO;
+        
     }
 }
 
@@ -67,6 +72,7 @@ function escribirCasilla(id)
     {
         if(turno=='X')
         {
+            sndX.play();
             document.getElementById(id).className = "X";
             document.getElementById(id).innerHTML="<h2>X</h2>";
             document.getElementById(id).removeAttribute("onclick");
@@ -75,6 +81,7 @@ function escribirCasilla(id)
         }
         else
         {
+            sndO.play();
             document.getElementById(id).className = "O";
             document.getElementById(id).innerHTML="<h2>O</h2>";
             document.getElementById(id).removeAttribute("onclick");
@@ -84,13 +91,14 @@ function escribirCasilla(id)
 
         if(verificarJugada())
         {
+            sndPartida.play();
             document.getElementById("ganador").className = "ganador";
             document.getElementById("ganador").innerHTML = "<h1>GANADOR: " + turno + "</h1>"; 
             document.getElementById("jugadaX").className = "imgHide";
             document.getElementById("jugadaO").className = "imgHide";
             incrementarPuntaje(turno);
 
-            if(puntosX<5 && puntosO<5)
+            if(puntosX<3 && puntosO<3)
             {
                 document.getElementById("botonInicio").setAttribute('onclick',"iniciarPartida(false)");
                 document.getElementById("botonInicio").innerText = "REVANCHA!";
@@ -99,6 +107,7 @@ function escribirCasilla(id)
             }
             else
             {
+                sndCapeon.play();
                 //mostrar copa
                 if(turno=='X')
                 {
@@ -232,3 +241,6 @@ function reiniciarPartida()
 {
     location.reload();
 }
+
+
+

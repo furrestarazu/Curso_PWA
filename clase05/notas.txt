@@ -1,4 +1,0 @@
-vistas: 
-    celular -> una columna
-    tablet -> 2 de 4 columnas
-    PC -> 3 de 8 columnas
