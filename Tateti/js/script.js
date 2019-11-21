@@ -93,7 +93,7 @@ function escribirCasilla(id)
         {
             sndPartida.play();
             document.getElementById("ganador").className = "ganador";
-            document.getElementById("ganador").innerHTML = "<h1>GANADOR: " + turno + "</h1>"; 
+            document.getElementById("ganador").innerHTML = "GANADOR: " + turno; 
             document.getElementById("jugadaX").className = "imgHide";
             document.getElementById("jugadaO").className = "imgHide";
             incrementarPuntaje(turno);

@@ -201,14 +201,15 @@ div#ganador
 {
     transition: 1s;
     /*width: 100vw;*/
-    margin: 15px;
+    /*margin: 15px;*/
     margin-top: 0;
     height: 60px;
     text-align: center;
     align-items: center;
     color:green;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 45px;
+    font-size: 37px;
+    font-weight: bold;
     
     
 }
