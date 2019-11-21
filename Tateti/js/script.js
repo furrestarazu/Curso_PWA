@@ -207,6 +207,7 @@ function verificarJugada()
         document.getElementById("ganador").innerHTML = "<h1>EMPATE!!</h1>";
         document.getElementById("jugadaX").className = "imgHide";
         document.getElementById("jugadaO").className = "imgHide";
+        document.getElementById("botonContinuar").className = "btnContinuar";
     }
 }
 
