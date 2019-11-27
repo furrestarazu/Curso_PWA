@@ -207,7 +207,11 @@ function verificarJugada()
         document.getElementById("ganador").innerHTML = "<h1>EMPATE!!</h1>";
         document.getElementById("jugadaX").className = "imgHide";
         document.getElementById("jugadaO").className = "imgHide";
+        document.getElementById("botonInicio").setAttribute('onclick',"iniciarPartida(false)");
+        document.getElementById("botonInicio").innerText = "REVANCHA!";
+        document.getElementById("botonReinicio").className = "botonReinicio";
         document.getElementById("botonContinuar").className = "btnContinuar";
+        
     }
 }
 
