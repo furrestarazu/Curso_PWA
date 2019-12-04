@@ -3,6 +3,7 @@ self.addEventListener("install",evt  =>
 {
     console.log("Service Worker instalado correctamente");
 } );
-// activate
+
+// activate 2
 
 // fetch
