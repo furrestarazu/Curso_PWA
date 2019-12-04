@@ -1,7 +1,7 @@
 // install
 self.addEventListener("install",evt  =>
 {
-    console.log("Service Worker instalado");
+    console.log("Service Worker instalado")
 } );
 
 
