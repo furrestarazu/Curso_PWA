@@ -1,8 +1,20 @@
+const cacheName="TatetiCache";
+const elements=["/","/index.html","/css/style.css","/js/script.js"];
+
 // install --> instala los elementos en la caché del navegador
 self.addEventListener("install", evt  =>
 {
-    console.log("Service Worker instalado");
-} );
+    //console.log("Service Worker instalado");
+    evt.waitUntil(
+        caches.open(cacheName)
+        .then((cache) => 
+        {
+            console.log("Cache predeterminado:");
+            cache.addAll(elements);
+
+        }
+        ));
+});
 
 
 // activate --> verifica que no haya cambios en los archivos. En caso de haberlos, pisa con la última versión
