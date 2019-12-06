@@ -29,4 +29,11 @@ self.addEventListener("activate", evt =>
 self.addEventListener("fetch", evt =>
 {
     console.log("se atrapó el evento: ", evt);
+    evt.respondWith(
+        caches.match(evt.request)
+        .then(cacheRes =>
+        {
+            return cacheRes || fetch(evt.request)
+        }
+    ));
 });
