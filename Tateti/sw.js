@@ -1,5 +1,5 @@
 const cacheName="TatetiCache";
-const elements=["https://furrestarazu.github.io/Curso_PWA/Tateti/","index.html","css/style.css","js/script.js","sounds/"];
+const elements=["https://furrestarazu.github.io/Curso_PWA/Tateti/","index.html","css/style.css","js/script.js"];
 
 
 // install --> instala los elementos en la caché del navegador
