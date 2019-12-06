@@ -1,5 +1,6 @@
 const cacheName="TatetiCache_v1"; //se debe tener en cuenta las versiones para que se actualicen los cambios en los usuarios 
 //const elements=["https://furrestarazu.github.io/Curso_PWA/Tateti/","index.html","css/style.css","js/script.js"];
+
 const elements=[
     'https://furrestarazu.github.io/Curso_PWA/Tateti/',
     'index.html',
