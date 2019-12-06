@@ -1,4 +1,4 @@
-const cacheName="TatetiCache_v1";
+const cacheName="TatetiCache_v1"; //se debe tener en cuenta las versiones para que se actualicen los cambios en los usuarios 
 //const elements=["https://furrestarazu.github.io/Curso_PWA/Tateti/","index.html","css/style.css","js/script.js"];
 const elements=[
     'https://furrestarazu.github.io/Curso_PWA/Tateti/',
@@ -34,31 +34,39 @@ self.addEventListener("install", evt  =>
     evt.waitUntil(
         caches.open(cacheName)
         .then((cache) => 
-        {
-            console.log("Cache predeterminado:");
-            cache.addAll(elements);
-
-        }
-        ));
+            {
+               //console.log("Cache predeterminado:");
+                cache.addAll(elements);
+            })
+        );
 });
 
 
 // activate --> verifica que no haya cambios en los archivos. En caso de haberlos, pisa con la última versión
 self.addEventListener("activate", evt =>
 {
-    console.log("Service Worker activado");
+    evt.waitUntil(
+        caches.keys()
+        .then(keys => 
+            {
+                return Promise.all(keys
+                    .filter (key => key !== cacheName) //busca todos los cachés que no tengan el nombre que tiene actualmente
+                    .map (key => caches.delete(key))   // y los borra, dejando sólo el último
+                )
+            })
+    );
 });
 
 
 // fetch --> atrapa los pedidos al servidor
 self.addEventListener("fetch", evt =>
 {
-    console.log("se atrapó el evento: ", evt);
+    //console.log("se atrapó el evento: ", evt);
     evt.respondWith(
         caches.match(evt.request)
         .then(cacheRes =>
-        {
-            return cacheRes || fetch(evt.request)
-        }
-    ));
+            {
+                return cacheRes || fetch(evt.request)
+            })
+    );
 });
