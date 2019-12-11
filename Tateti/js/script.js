@@ -1,3 +1,4 @@
+// definición de variables y constantes globales
 const dir = "sounds/"
 var turno = 'X';
 var puntosX = 0;
@@ -6,10 +7,10 @@ var cantidadJugadas = 0;
 var sndX = new Audio("sounds/cruz.mp3");
 var sndO = new Audio("sounds/circulo.mp3");
 var sndPartida = new Audio("sounds/aplauso.mp3");
-var sndCapeon = new Audio("sounds/campeon.mp3");
+var sndCampeon = new Audio("sounds/campeon.mp3");
 
-//document.getElementById("botonInicio").disabled = true;
 
+// dibuja el tablero en la ventana principal de forma dinámica
 function dibujarTablero() 
 {
     for (let i=0; i<9; i++)
@@ -17,12 +18,13 @@ function dibujarTablero()
         let casilla = document.createElement('div');
         casilla.id = i;
         casilla.className = "casillas";
-        casilla.setAttribute('onclick',"escribirCasilla(this.id)");
+        casilla.setAttribute('onclick',"escribirCasilla(this.id)"); // asigna la función que será activada en el evento "onclick" pasando como parámetro el ID del elemento que dispara la acción
         document.getElementById("tablero").appendChild(casilla);
     }
 }
 
 
+// muestra u oculta la pantalla de inicio
 function mostrarInicio(mostrar)
 {
     if(mostrar)
@@ -39,6 +41,7 @@ function mostrarInicio(mostrar)
 }
 
 
+// realiza las acciones para el inicio de la jugada, diferenciando si es la primera vez o si es una revancha
 function iniciarPartida(primeraVez)
 {
     if(primeraVez)
@@ -66,6 +69,7 @@ function iniciarPartida(primeraVez)
 }
 
 
+// marca la casilla jugada dependiendo del turno correspondiente
 function escribirCasilla(id)
 {
     if(cantidadJugadas<9)
@@ -75,7 +79,7 @@ function escribirCasilla(id)
             sndX.play();
             document.getElementById(id).className = "X";
             document.getElementById(id).innerHTML="<h2>X</h2>";
-            document.getElementById(id).removeAttribute("onclick");
+            document.getElementById(id).removeAttribute("onclick"); // elimina el evento para que no reciba más acciones en caso de hacerse click
             document.getElementById("jugadaX").className = "imgHide";
             document.getElementById("jugadaO").className = "imgShow";
         }
@@ -107,8 +111,8 @@ function escribirCasilla(id)
             }
             else
             {
-                sndCapeon.play();
-                //mostrar copa
+                sndCampeon.play();
+                
                 if(turno=='X')
                 {
                     document.getElementById("imagenCopa").src = "img/copaX.png";
@@ -152,6 +156,7 @@ function cambiarTurno()
 }
 
 
+// realiza la verificación de todo el tablero para saber si existe un ganador
 function verificarJugada()
 {
     cantidadJugadas++;
@@ -201,7 +206,7 @@ function verificarJugada()
             return true;
         }
     }
-    else
+    else // si no se cumplieron las condiciones anteriores y la cantidad de jugadas es 9, significa que hubo un empate
     {
         document.getElementById("ganador").className = "ganador";
         document.getElementById("ganador").innerHTML = "<h1>EMPATE!!</h1>";
@@ -246,6 +251,3 @@ function reiniciarPartida()
 {
     location.reload();
 }
-
-
-

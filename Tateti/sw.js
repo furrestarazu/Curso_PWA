@@ -1,6 +1,6 @@
 const cacheName="TatetiCache_v1"; //se debe tener en cuenta las versiones para que se actualicen los cambios en los usuarios 
-//const elements=["https://furrestarazu.github.io/Curso_PWA/Tateti/","index.html","css/style.css","js/script.js"];
 
+//elementos que deben ingresar directo al caché (para que funcione perfectamente en modo offline)
 const elements=[
     'https://furrestarazu.github.io/Curso_PWA/Tateti/',
     'index.html',
@@ -31,13 +31,11 @@ const elements=[
 // install --> instala los elementos en la caché del navegador
 self.addEventListener("install", evt  =>
 {
-    //console.log("Service Worker instalado");
-    evt.waitUntil(
+    evt.waitUntil( //espera hasta que el caché se abra
         caches.open(cacheName)
         .then((cache) => 
             {
-               //console.log("Cache predeterminado:");
-                cache.addAll(elements);
+                cache.addAll(elements); //agrega todos los elementos indicados más arriba al caché al momento de la instalación del service worker
             })
         );
 });
@@ -47,7 +45,7 @@ self.addEventListener("install", evt  =>
 self.addEventListener("activate", evt =>
 {
     evt.waitUntil(
-        caches.keys()
+        caches.keys() //espera hasta que se obtengan todos los identificadores de los caché
         .then(keys => 
             {
                 return Promise.all(keys
@@ -62,12 +60,11 @@ self.addEventListener("activate", evt =>
 // fetch --> atrapa los pedidos al servidor
 self.addEventListener("fetch", evt =>
 {
-    //console.log("se atrapó el evento: ", evt);
     evt.respondWith(
-        caches.match(evt.request)
+        caches.match(evt.request) //verifica si coincide lo que se está pidiendo al servidor con lo que está guardado en el caché
         .then(cacheRes =>
             {
-                return cacheRes || fetch(evt.request)
+                return cacheRes || fetch(evt.request) //si existe, devuelve lo que está en caché, sino continua con el pedido al servidor
             })
     );
 });

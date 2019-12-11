@@ -1,4 +1,4 @@
-@font-face
+@font-face /* Utilizado para poder incorporar fuentes tipográficas específicas */
 {
     font-family:"crayon";
     src: url('../font/crayon3.ttf');
@@ -9,7 +9,6 @@
 {
     margin: 0;
     padding: 0;
-    /*transition: 1s;*/
 }
 
 body
@@ -19,7 +18,7 @@ body
     grid-template-rows: 95px 1fr;
     height: 100vh;
     background-image: url('../img/fondoCuaderno.png');
-    background-repeat: repeat;
+    background-repeat: repeat; 
 }
 
 footer
@@ -30,7 +29,6 @@ footer
 
 div
 {
-    /*background-color: rgba(0, 0, 0, 0.2);*/
     border-radius: 15px;
     align-items: center;
 }
@@ -57,8 +55,6 @@ section
     grid-template-rows: repeat(3,1fr);
     gap: 0px;
     margin: auto;
-    
-    /* transform: translateY(50%); no aplicable a mobile */
 }
 
 
@@ -183,7 +179,6 @@ h1
 .ganado
 {
     transition: 1s;
-    /*background-color: rgba(17, 0, 255, 0.417);*/
     color:green ;
    
     
@@ -200,8 +195,6 @@ div#ganador
 .ganador
 {
     transition: 1s;
-    /*width: 100vw;*/
-    /*margin: 15px;*/
     margin-top: 0;
     height: 60px;
     text-align: center;
@@ -210,8 +203,6 @@ div#ganador
     font-family: Arial, Helvetica, sans-serif;
     font-size: 37px;
     font-weight: bold;
-    
-    
 }
 
 .ganadorOff
